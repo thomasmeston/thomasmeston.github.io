@@ -3,51 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon Radio Mystery</title>
+    <title>Military Radio Game</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            background: #000;
-        }
-        canvas {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="icon" type="image/png" href="src/assets/favicon.png">
 </head>
 <body>
-    <div id="game-container">
-        <div class="resource-display">
-            <div class="resource-item">
-                <div class="resource-icon food"></div>
-                <div class="resource-name">Food</div>
-                <div class="resource-value">0</div>
-            </div>
-            <div class="resource-item">
-                <div class="resource-icon batteries"></div>
-                <div class="resource-name">Batteries</div>
-                <div class="resource-value">0</div>
-            </div>
-            <div class="resource-item">
-                <div class="resource-icon medicine"></div>
-                <div class="resource-name">Medicine</div>
-                <div class="resource-value">0</div>
-            </div>
-        </div>
-        <div id="radio-container"></div>
-        <button class="console-toggle"></button>
-        <div id="game-ui">
-            <div id="message-log"></div>
-        </div>
-    </div>
-    <script>
-        // Add toggle functionality
-        document.querySelector('.console-toggle').addEventListener('click', function() {
-            this.classList.toggle('active');
-            document.getElementById('game-ui').classList.toggle('visible');
-        });
-    </script>
+    <div class="background-container"></div>
+    <div class="overlay"></div>
+    <div class="fade-overlay"></div>
+    
+    <!-- Game UI will be dynamically inserted here -->
+    <div id="game-container"></div>
+    
+    <!-- Load game scripts -->
+    <script type="module" src="src/game/GameEngine.js"></script>
+    <script type="module" src="src/main.js"></script>
 </body>
 </html> 
